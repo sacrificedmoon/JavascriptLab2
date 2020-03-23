@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book DataBase</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="Header">
+    <h1>Digital Book Storage</h1>
+  </div>
+  <div id="Sidebar">
+    <button id="addBookBtn" type="button">Add Book</button><br>
+    <button id="viewBooksBtn" type="button">View Books</button><br>
+    <button id="getAPIKey" type="button">Get API-key</button>
+  </div>
+  <div class="main">
+    <div id="addBookDiv">
+      <form id="addBookForm">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br>
+        <button type="submit" value="Add Book">Add Book</button>
+        <button type="reset" value="Reset">Reset</button>
+      </form>
+    </div>
+    <div id="showBooksDiv"></div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

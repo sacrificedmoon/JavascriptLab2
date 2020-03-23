@@ -1,0 +1,32 @@
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #6298fc;
+}
+
+.Header {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.Sidebar {
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 20px; 
+}
+
+.main {
+    margin-left: 160px;
+    padding: 0px 10px;
+}
+
+button {
+    margin: 5px;
+}
+
+
