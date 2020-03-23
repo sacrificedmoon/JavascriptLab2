@@ -11,23 +11,24 @@
     <h1>Digital Book Storage</h1>
   </div>
   <div id="Sidebar">
-    <button id="addBookBtn" type="button">Add Book</button><br>
-    <button id="viewBooksBtn" type="button">View Books</button><br>
+    <button id="viewBooksBtn" type="button" onclick="viewBooks()">View Books</button><br>
     <button id="getAPIKey" type="button" onclick="getAPIKey()">Get API-key</button><br>
     <p id="keyResult">No key yet</p>
   </div>
   <div class="main">
     <div id="addBookDiv">
       <form id="addBookForm">
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title"><br>
-        <button type="submit" value="Add Book">Add Book</button>
-        <button type="reset" value="Reset">Reset</button>
+        <label for="authorForm">Author:</label>
+        <input type="text" id="authorForm" name="author">
+        <label for="titleForm">Title:</label>
+        <input type="text" id="titleForm" name="title"><br>
+        <button type="submit" value="Add Book" id="addBookBtn" onclick="addBook()">Add Book</button>
+        <p id='bookMessage'>No books added yet</p>
       </form>
     </div>
-    <div id="showBooksDiv"></div>
+    <div id="showBooksDiv">
+      <ul id="showBooksList">Books</ul>
+    </div>
   </div>
   
   <script src="script.js"></script>
