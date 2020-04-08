@@ -23,7 +23,7 @@ function addBook () {
             console.log('Operation failed after 10 attempts');
         } else {
             viewBooks();
-            document.getElementById('bookMessage').innerHTML = (`Book added successfully.`);
+            document.getElementById('bookMessage').innerHTML = (`Book added.`);
             console.log('Operation was a success');
         }
     });
@@ -32,7 +32,6 @@ function addBook () {
 function getAPIKey () {
     numOfAttempts++
     let APIUrl = "https://www.forverkliga.se/JavaScript/api/crud.php?requestKey";
-    let apiKeyResult = document.getElementById("keyResult");
     fetch(APIUrl)
         .then((response) => response.json())
         .then((json) => {
@@ -61,12 +60,12 @@ function viewBooks () {
             viewBooks();
         } else if (json.status != "success" && numOfAttempts == maxAttempts) {
             console.log('Operation failed after 10 attempts');
-            document.getElementById('bookMessage').innerHTML = (`Could not load booklist.<br>Refresh to try again.`);
+            document.getElementById('bookMessage').innerHTML = (`Could not load booklist`);
         } else {
             bookList = json['data'];
             let output = '';
             bookList.forEach(function (item) {
-                output += '<ul>' +
+                output = '<ul>' +
                     '<li> ID: ' + item.id + '</li>' +
                     '<li> Title: ' + item.bookTitle + '</li>' +
                     '<li> Author: ' + item.authorName + '</li>' +
