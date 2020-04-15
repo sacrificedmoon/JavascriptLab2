@@ -4,9 +4,6 @@ const maxAttempts = 10;
 let numOfAttempts = 0;
 let bookList= [];
 
-document.getElementById('addBookBtn').onclick = addBook();
-document.getElementById('getAPIKey').onclick = getAPIKey();
-
 function addBook () {
     numOfAttempts++;
     const addBooksQuery = '&op=insert';
@@ -18,7 +15,7 @@ function addBook () {
     .then((json) => {
         if (json.status != "success" && numOfAttempts < maxAttempts) {
             console.log('Operation failed');
-            addBook(bookTitle, authorName);
+            addBook();
         } else if (json.status != "success" && numOfAttempts == maxAttempts) {
             console.log('Operation failed after 10 attempts');
         } else {
@@ -65,6 +62,7 @@ function viewBooks () {
             bookList = json['data'];
             let output = '';
             bookList.forEach(function (item) {
+				console.log('Showing books');
                 output = '<ul>' +
                     '<li> ID: ' + item.id + '</li>' +
                     '<li> Title: ' + item.bookTitle + '</li>' +
