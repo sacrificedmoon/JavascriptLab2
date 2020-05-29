@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Book DataBase</title>
+<script src="script.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book DataBase</title>
 </head>
+
 <body>
   <div id="Header">
     <h1>Digital Book Storage</h1>
   </div>
   <div id="Sidebar">
-    <button id="viewBooksBtn" type="button" onclick="viewBooks()">View Books</button><br>
-    <button id="getAPIKey" type="button" onclick="getAPIKey()">Get API-key</button><br>
+    <button type="button" onclick="getAPIKey()">Get API-key</button><br>
     <p id="keyResult">No key yet</p>
   </div>
   <div class="main">
-    <div id="addBookDiv">
+    <div>
       <form id="addBookForm">
         <label for="authorForm">Author:</label>
         <input type="text" id="authorForm" name="author">
         <label for="titleForm">Title:</label>
         <input type="text" id="titleForm" name="title"><br>
-        <button type="submit" value="Add Book" id="addBookBtn" onclick="addBook()">Add Book</button>
-        <p id='bookMessage'>No books added yet</p>
+        <button type="button" value="Add Book" id="addBookBtn" onclick="addBook()">Add Book</button>
+        <p id='statusReport'>No books added yet</p>
+          <div id="showBooksDiv">
+            <button type="button" onclick="viewBooks()">View Books</button><br>
+            <ul id='savedBooks'>
+
+
+            </ul>
+          </div>
       </form>
     </div> 
   </div>
-  <div id="showBooksDiv"></div>
-  <script src="script.js"></script>
+  
+  
 </body>
 </html>
